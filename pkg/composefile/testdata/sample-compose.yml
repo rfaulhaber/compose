@@ -1,0 +1,11 @@
+region: us-east-1
+
+functions:
+  jsTest:
+    name: dev-jsTest
+    type: js
+    description: "Some really long description"
+    build:
+      - yarn run build
+    tags:
+      stack: test
