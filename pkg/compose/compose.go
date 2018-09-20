@@ -1,9 +1,7 @@
-package composefile
+package compose
 
-type ComposeFile struct {
+type File struct {
 	Region    string              `yaml:"region"`
-	Stage     string              `yaml:"stage"`
-	SaveToS3  bool                `yaml:"saveToS3"`
 	Functions map[string]Function `yaml:"functions"`
 }
 
@@ -15,6 +13,7 @@ type Function struct {
 	Runtime     string            `yaml:"runtime"`
 	Handler     string            `yaml:"handler"`
 	Path        string            `yaml:"path"`
+	Include     []string          `yaml:"include"`
 	MemorySize  int64             `yaml:"memorySize"`
 	Timeout     int64             `yaml:"timeout"`
 	Tags        map[string]string `yaml:"tags"`

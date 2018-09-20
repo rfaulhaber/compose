@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"fmt"
+	"log"
 	"os"
 
 	"github.com/spf13/cobra"
@@ -9,6 +10,9 @@ import (
 )
 
 var cfgFile string
+
+var stdout = log.New(os.Stdout, "compose: ", 0)
+var stderr = log.New(os.Stderr, "compose: ", 0)
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
@@ -42,7 +46,7 @@ func initConfig() {
 	}
 
 	// If a config file is found, read it in.
-	if err := viper.ReadInConfig(); err == nil {
-		fmt.Println("Using config file:", viper.ConfigFileUsed())
+	if err := viper.ReadInConfig(); err != nil {
+		stderr.Fatalln("no compose.yaml file found")
 	}
 }
