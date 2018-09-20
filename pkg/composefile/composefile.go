@@ -9,6 +9,12 @@ type ComposeFile struct {
 
 type Function struct {
 	Name string `yaml:"name"`
+	Description string `yaml:"description"`
 	Build []string `yaml:"build"`
 	Stage string `yaml:"stage"`
+	Type string `yaml:"type"`
+	Handler string `yaml:"handler"`
+	Path string `yaml:"path"`
+	MemorySize int64 `yaml:"memorySize"`
+	Timeout int64 `yaml:"timeout"`
 }
