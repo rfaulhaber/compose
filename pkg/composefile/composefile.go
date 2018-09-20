@@ -4,7 +4,7 @@ type ComposeFile struct {
 	Region string `yaml:"region"`
 	Stage string `yaml:"stage"`
 	SaveToS3 bool `yaml:"saveToS3"`
-	Functions []Function `yaml:"functions"`
+	Functions map[string]Function `yaml:"functions"`
 }
 
 type Function struct {
@@ -17,4 +17,5 @@ type Function struct {
 	Path string `yaml:"path"`
 	MemorySize int64 `yaml:"memorySize"`
 	Timeout int64 `yaml:"timeout"`
+	Tags map[string]string `yaml:"tags"`
 }
