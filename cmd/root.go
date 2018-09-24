@@ -18,7 +18,7 @@ var stderr = log.New(os.Stderr, "compose: ", 0)
 var rootCmd = &cobra.Command{
 	Use:   "compose",
 	Short: "CLI tool for managing AWS Lambda functions",
-	Long: `CLI tool for managing AWS Lambda functions using the AWS API.`,
+	Long:  `CLI tool for managing AWS Lambda functions using the AWS API.`,
 }
 
 func Execute() {

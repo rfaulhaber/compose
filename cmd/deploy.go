@@ -33,7 +33,7 @@ func init() {
 // 2. package function
 // 3. compress function
 // 3. deploy function
-	// deploy to S3 if necessary
+// deploy to S3 if necessary
 func RunDeploy(cmd *cobra.Command, args []string) error {
 	var compFile compose.File
 
@@ -56,7 +56,7 @@ func RunDeploy(cmd *cobra.Command, args []string) error {
 func buildFunc(function compose.Function) error {
 	for n, step := range function.Build {
 		if err := runCmd(step); err != nil {
-			return errors.Wrap(err, "build step " + string(n + 1) + " for function " + function.Name + "failed: ")
+			return errors.Wrap(err, "build step "+string(n+1)+" for function "+function.Name+"failed: ")
 		}
 	}
 

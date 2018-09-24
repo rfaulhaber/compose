@@ -10,7 +10,7 @@ import (
 var rollbackCmd = &cobra.Command{
 	Use:   "rollback",
 	Short: "Rolls back specified function to previous version",
-	Long: `Rolls back function to specified alias or redeploys to previous version`,
+	Long:  `Rolls back function to specified alias or redeploys to previous version`,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("this command is not implemented yet!")
 	},

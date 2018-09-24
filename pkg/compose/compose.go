@@ -14,8 +14,10 @@ type Function struct {
 	Handler     string            `yaml:"handler"`
 	Path        string            `yaml:"path"`
 	Include     []string          `yaml:"include"`
+	Exclude     []string          `yaml:"exclude"`
 	MemorySize  int64             `yaml:"memorySize"`
 	Timeout     int64             `yaml:"timeout"`
+	Environment map[string]string `yaml:"environment"`
 	Tags        map[string]string `yaml:"tags"`
 }
 

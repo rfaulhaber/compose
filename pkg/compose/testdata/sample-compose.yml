@@ -9,3 +9,7 @@ functions:
       - yarn run build
     tags:
       stack: test
+    include:
+      - dist/out/*
+    exclude:
+      -
