@@ -31,7 +31,9 @@ func init() {
 
 // 1. build function
 // 2. package function
+// 3. compress function
 // 3. deploy function
+	// deploy to S3 if necessary
 func RunDeploy(cmd *cobra.Command, args []string) error {
 	var compFile compose.File
 
@@ -40,7 +42,6 @@ func RunDeploy(cmd *cobra.Command, args []string) error {
 	if err != nil {
 		return err
 	}
-
 
 	for _, fun := range compFile.Functions {
 		if err := buildFunc(fun); err != nil {
@@ -51,6 +52,7 @@ func RunDeploy(cmd *cobra.Command, args []string) error {
 	return nil
 }
 
+// TODO refactor into "function builder"?
 func buildFunc(function compose.Function) error {
 	for n, step := range function.Build {
 		if err := runCmd(step); err != nil {

@@ -17,7 +17,7 @@ var stderr = log.New(os.Stderr, "compose: ", 0)
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
 	Use:   "compose",
-	Short: "AWS Lambda CLI composer",
+	Short: "CLI tool for managing AWS Lambda functions",
 	Long: `CLI tool for managing AWS Lambda functions using the AWS API.`,
 }
 
@@ -46,7 +46,7 @@ func initConfig() {
 	}
 
 	// If a config file is found, read it in.
-	if err := viper.ReadInConfig(); err != nil {
+	if err := viper.ReadInConfig(); err != nil && os.Args[1] != "version" {
 		stderr.Fatalln("no compose.yaml file found")
 	}
 }

@@ -12,7 +12,7 @@ var deleteCmd = &cobra.Command{
 	Short: "Deletes a Lambda function",
 	Long: `Deletes a Lambda function `,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("delete called")
+		fmt.Println("this command is not implemented yet!")
 	},
 }
 

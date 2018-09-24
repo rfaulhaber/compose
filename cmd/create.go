@@ -11,7 +11,7 @@ var createCmd = &cobra.Command{
 	Short: "Creates a new Lambda function",
 	Long: `Creates a new Lambda function using the AWS CreateFunction API call.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("create called")
+		fmt.Println("this command is not implemented yet!")
 	},
 }
 

@@ -12,7 +12,7 @@ var aliasCmd = &cobra.Command{
 	Short: "Adds alias to function, or updates alias for function",
 	Long: `Adds or updates alias for function`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("alias called")
+		fmt.Println("this command is not implemented yet!")
 	},
 }
 
